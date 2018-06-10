@@ -24,10 +24,6 @@ void Game::render()
 {
 }
 
-void Game::touchScreen(int _x, int _y)
-{
-}
-
 int Game::loadImage(const char *_filepath)
 {
 	jstring filename = m_env->NewStringUTF(_filepath);

@@ -28,6 +28,7 @@ class Sprite
 {
 public:
 	Sprite(const SpriteRegion &_spriteRegion);
+	Sprite(int _image);
 	~Sprite();
 
 	void update(float _delta);

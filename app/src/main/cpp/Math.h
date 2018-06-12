@@ -33,6 +33,16 @@ struct vec2f
 		return *this;
 	}
 };
+struct mat4f
+{
+	float m_values[4][4];
+	mat4f(float _value);
+	mat4f(float *_values);
+
+	static mat4f ortho(const vec2f &_resolution, const vec2f &_position);
+};
+
+
 } // namespace math
 
 math::vec2f operator+(const math::vec2f &_a, const math::vec2f &_b);

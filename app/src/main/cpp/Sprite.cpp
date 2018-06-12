@@ -9,6 +9,14 @@ Sprite::Sprite(const SpriteRegion &_spriteRegion)
 {
 }
 
+Sprite::Sprite(int _image)
+	: m_position(0.f)
+	, m_scale(0.f)
+	, m_rotation(0.f)
+	, m_spriteRegion(_image)
+{
+}
+
 Sprite::~Sprite()
 {
 }

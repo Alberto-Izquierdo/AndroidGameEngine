@@ -13,8 +13,14 @@ namespace Game
 Game::Game()
 {
 }
+
 Game::~Game()
 {
+}
+
+void Game::init()
+{
+
 }
 
 void Game::update(float _delta)

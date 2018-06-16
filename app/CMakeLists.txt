@@ -25,6 +25,8 @@ add_library( # Sets the name of the library.
              src/main/cpp/Sprite.cpp
              src/main/cpp/SpriteManager.h
              src/main/cpp/SpriteManager.cpp
+			 src/main/cpp/ShaderManager.h
+			 src/main/cpp/ShaderManager.cpp
              src/main/cpp/Math.h
              src/main/cpp/Math.cpp
 			 src/main/cpp/StateMachine/State.h

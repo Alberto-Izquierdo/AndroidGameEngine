@@ -12,6 +12,8 @@ public:
 	Game();
 	~Game();
 
+	void init();
+
 	void update(float _delta);
 	void render();
 

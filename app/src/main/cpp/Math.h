@@ -40,6 +40,7 @@ struct mat4f
 	mat4f(float *_values);
 
 	static mat4f ortho(const vec2f &_resolution, const vec2f &_position);
+	const float *data() const;
 };
 
 

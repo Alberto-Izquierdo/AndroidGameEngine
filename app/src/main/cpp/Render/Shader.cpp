@@ -48,6 +48,11 @@ void Shader::SetUniform4f(const std::string& _sName, float _fV1, float _fV2, flo
 	glUniform4f(GetUniformLocation(_sName), _fV1, _fV2, _fV3, _fV4);
 }
 
+void Shader::SetUniformMatrix4f(const std::string &_sName, const math::mat4f &_matrix)
+{
+    glUniformMatrix4fv(GetUniformLocation(_sName), 1, GL_FALSE, _matrix.data());
+}
+
 unsigned int Shader::CreateShader(const char* _pSource, GLShader _eShaderType)
 {
 	GLuint iShader = glCreateShader(_eShaderType == GLShader::VERTEX ? GL_VERTEX_SHADER : GL_FRAGMENT_SHADER);

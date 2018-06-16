@@ -1,6 +1,6 @@
 #pragma once
 
-#include <map>
+#include <unordered_map>
 #include <string>
 
 class SpriteManager
@@ -13,5 +13,6 @@ public:
 protected:
 	SpriteManager();
 	~SpriteManager();
-	std::map<std::string, int> m_imagesLoaded;
+	int loadImage(const std::string &_filepath);
+	std::unordered_map<std::string, int> m_imagesLoaded;
 };

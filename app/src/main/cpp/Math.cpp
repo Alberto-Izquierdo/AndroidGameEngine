@@ -59,4 +59,9 @@ mat4f mat4f::ortho(const vec2f &_resolution, const vec2f &_position)
 	matrix[15] = 0.f;
 	return mat4f(matrix);
 }
+
+const float *mat4f::data() const
+{
+	return &m_values[0][0];
+}
 };

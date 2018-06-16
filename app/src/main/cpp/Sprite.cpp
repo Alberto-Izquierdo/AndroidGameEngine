@@ -1,4 +1,5 @@
 #include "Sprite.h"
+#include "SpriteManager.h"
 
 namespace Game {
 Sprite::Sprite(const SpriteRegion &_spriteRegion)
@@ -15,6 +16,15 @@ Sprite::Sprite(int _image)
 	, m_rotation(0.f)
 	, m_spriteRegion(_image)
 {
+}
+
+Sprite::Sprite(const std::string &_image)
+	: m_position(0.f)
+	, m_scale(0.f)
+	, m_rotation(0.f)
+	, m_spriteRegion(SpriteManager::getInstance().getImage(_image))
+{
+
 }
 
 Sprite::~Sprite()

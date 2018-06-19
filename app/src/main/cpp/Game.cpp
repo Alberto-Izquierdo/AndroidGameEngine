@@ -30,13 +30,15 @@ void Game::render()
 {
 }
 
-int Game::loadImage(const char *_filepath)
+int* Game::loadImage(const char *_filepath)
 {
 	jstring filename = m_env->NewStringUTF(_filepath);
 	jclass clazz = m_env->FindClass("com/example/project/game/GameLib");
-	jmethodID methodID = m_env->GetStaticMethodID(clazz, "LoadTexture", "(Ljava/lang/String;)I");
-	jint out = m_env->CallStaticIntMethod(clazz, methodID, filename);
-	return out;
+	jmethodID methodID = m_env->GetStaticMethodID(clazz, "LoadTexture", "(Ljava/lang/String;)[I");
+	jobject object = m_env->CallStaticObjectMethod(clazz, methodID, filename);
+    jintArray array = reinterpret_cast<jintArray>(object);
+    jint *elements = m_env->GetIntArrayElements(array, 0);
+	return elements;
 }
 }
 

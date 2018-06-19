@@ -10,7 +10,7 @@ public class GameLib {
 
     public static native void init();
     public static native void update();
-    public static int LoadTexture(String path)
+    public static int[] LoadTexture(String path)
     {
         return textureLoader.LoadTexture(path);
     }

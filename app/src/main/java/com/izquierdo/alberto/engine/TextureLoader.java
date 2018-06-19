@@ -19,7 +19,7 @@ public class TextureLoader {
     public TextureLoader(Activity act) {
         activity = act;
     }
-    public static int LoadTexture (String path) {
+    public static int[] LoadTexture (String path) {
         Bitmap bitmap = null;
         try {
             String str = path;
@@ -36,7 +36,7 @@ public class TextureLoader {
         }
         catch (Exception e) {
             Log.w("TextureLoader", "Could not load a file: " + path);
-            return -1;
+            return new int[] {-1, -1, -1};
         }
 
         if (bitmap != null) {
@@ -59,6 +59,6 @@ public class TextureLoader {
         //GLES20.glTexImage2D(GLES20.GL_TEXTURE_2D, 0, GLES20.GL_RGBA, width, height, 0, GLES20.GL_RGBA, GLES20.GL_UNSIGNED_BYTE, buffer);
         GLES20.glBindTexture(GLES20.GL_TEXTURE_2D, 0);
         bitmap.recycle();
-        return texID[0];
+        return new int[] {texID[0], width, height};
     }
 }
